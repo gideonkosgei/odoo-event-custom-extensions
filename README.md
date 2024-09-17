@@ -1,7 +1,7 @@
 # Odoo Custom Event Ticket Template Modification
 This custom module extends the Odoo Event module by modifying the event ticket template to include dynamic QR codes with custom URLs. Specifically, the default barcode displayed on event tickets is replaced by a QR code that incorporates the event's URL (event_url field) and the attendee's barcode, allowing for more personalized and event-specific ticketing.
 
-## Key Features:
+### Key Features:
 - Inherits and extends the default foldable event badge template (event_report_template_foldable_badge).
 - Replaces the default QR code source with a custom URL (event_url from event_event model).
 - Dynamically includes the attendee's barcode within the custom URL.
@@ -29,7 +29,7 @@ Here’s an example of the XPath modification used in the QWeb template:
 </odoo>
 ```
 
-## Installation:
+### Installation:
 - Clone or download the module into your Odoo addons directory.
 - Update your Odoo apps list, then install the module via the Odoo interface.
 ### Requirements:
