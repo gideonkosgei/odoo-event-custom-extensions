@@ -39,10 +39,7 @@ class EventVoucher(models.Model):
             )
 
             base_url = self.env['ir.config_parameter'].get_param('web.base.url')
-            # base_url = 'http://109.74.196.59:8069'
-            # base_url = 'http://localhost:8069'
-
-            qr_data = f'{base_url}/web/barcode_search?barcode={rec.barcode}'
+            qr_data = f'{base_url}/web/barcode_search/barcode/{rec.barcode}'
             qr.add_data(qr_data)
             qr.make(fit=True)
             img = qr.make_image()
