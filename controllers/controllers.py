@@ -16,3 +16,11 @@ class BarcodeSearchController(http.Controller):
             return redirect('/web#id=%s&model=event.voucher&view_type=form' % record.id)
         else:
             return "Record not found"
+
+class CustomAccessErrorController(http.Controller):
+
+    @http.route(['/access_denied'], type='http', auth="public", website=True)
+    def access_denied(self, **kwargs):
+        if not request.session.uid:
+            # If the user is not logged in, redirect to the login page
+            return request.redirect('/web/login')
