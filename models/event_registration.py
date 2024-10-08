@@ -7,14 +7,12 @@ class EventRegistration(models.Model):
 
     @api.model
     def create(self, vals):
-
         # Email domain check
         user_email = vals.get('email')
         if not user_email or not user_email.endswith('@cgiar.org'):
-            raise ValidationError("Only CGIAR email addresses are allowed to register.")
+            raise ValidationError("Registration is only permitted using a CGIAR email account.")
 
         # Existing registration check
-        user_email = vals.get('email')
         event_id = vals.get('event_id')
         if not user_email:
             return super(EventRegistration, self).create(vals)
@@ -27,4 +25,17 @@ class EventRegistration(models.Model):
         if existing_registration:
             raise ValidationError(
                 "This email has already been used to register for this event. Please check your mailbox for the confirmation and ticket")
-        return super(EventRegistration, self).create(vals)
+
+        # Create the registration record
+        registration = super(EventRegistration, self).create(vals)
+
+        # Automatically create a voucher for the new registration
+        self.env['event.voucher'].create({
+            'registration_id': registration.id,  # Assuming attendees_id is a Many2one field linking to event.registration
+            # Add any other necessary voucher fields here
+        })
+
+        return registration
+
+
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_event_voucher"
+              name="Vouchers"
+              parent="event.event_main_menu"
+              groups="event.group_event_user"
+              action="action_event_voucher"
+              sequence="20"/>
+</odoo>
+
+

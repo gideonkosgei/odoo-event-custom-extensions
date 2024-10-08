@@ -10,9 +10,13 @@
     'author': 'Gideon Kosgei',
     'depends': ['base', 'event'],
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/event_views.xml',
-        'views/event_ticket_template.xml'
+        'security/ir.model.access.csv',
+        'views/event_voucher_views.xml',
+        'views/event_ticket_template.xml',
+        'views/event_voucher_menu.xml',
+    ],
+    'controllers': [
+        'controllers/controllers.py',
     ],
     'installable': True,
     'application': False,

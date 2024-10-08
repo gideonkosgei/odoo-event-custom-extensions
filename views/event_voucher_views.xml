@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_event_registration_form_voucher" model="ir.ui.view">
+        <field name="name">event.form.voucher</field>
+        <field name="model">event.voucher</field>
+        <field name="arch" type="xml">
+            <form create="false">
+                <sheet>
+                    <widget name="web_ribbon" title="Closed" bg_color="bg-danger" invisible="state == 'Open'"/>
+                    <field name="qr_code" widget='image' class="oe_avatar"/>
+                    <group>
+                        <group>
+                            <field class="o_text_overflow" name="name"/>
+                            <field name="email"/>
+                            <field name="state" invisible="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Tokens" name="tokens">
+                            <form>
+                                <group>
+                                    <group>
+                                        <field name="token_food" invisible="token_food == True"/>
+                                        <field name="token_drink1" invisible="token_drink1 == True"/>
+                                        <field name="token_drink2" invisible="token_drink2 == True"/>
+                                    </group>
+                                </group>
+                            </form>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_ids"/>
+                </div>
+            </form>
+
+        </field>
+    </record>
+    <record id="view_event_registration_tree_voucher" model="ir.ui.view">
+        <field name="name">event.tree.voucher</field>
+        <field name="model">event.voucher</field>
+        <field name="arch" type="xml">
+            <tree expand="1" edit="false" create="false">
+                 <field name="name"/>
+                 <field name="email"/>
+                <field name="token_food"/>
+                <field name="token_drink1"/>
+                <field name="token_drink2"/>
+                <field name="state"/>
+            </tree>
+
+        </field>
+    </record>
+
+
+    <record id="action_event_voucher" model="ir.actions.act_window">
+        <field name="name">Vouchers</field>
+        <field name="res_model">event.voucher</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first voucher
+            </p>
+        </field>
+    </record>
+
+</odoo>
