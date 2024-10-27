@@ -37,26 +37,26 @@
 
         </field>
     </record>
-    <record id="view_event_registration_tree_voucher" model="ir.ui.view">
-        <field name="name">event.tree.voucher</field>
-        <field name="model">event.voucher</field>
-        <field name="arch" type="xml">
-            <tree expand="1" edit="false" create="false">
-                <field name="name"/>
-                <field name="email"/>
-                <field name="token_food"/>
-                <field name="token_drink1"/>
-                <field name="token_drink2"/>
-                <field name="state"/>
-            </tree>
-        </field>
-    </record>
+<!--    <record id="view_event_registration_tree_voucher" model="ir.ui.view">-->
+<!--        <field name="name">event.tree.voucher</field>-->
+<!--        <field name="model">event.voucher</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree expand="1" edit="false" create="false">-->
+<!--                <field name="name"/>-->
+<!--                <field name="email"/>-->
+<!--                <field name="token_food"/>-->
+<!--                <field name="token_drink1"/>-->
+<!--                <field name="token_drink2"/>-->
+<!--                <field name="state"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
 
 
     <record id="action_event_voucher" model="ir.actions.act_window">
         <field name="name">Vouchers</field>
         <field name="res_model">event.voucher</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create your first voucher
