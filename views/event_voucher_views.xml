@@ -57,7 +57,7 @@
     <record id="action_event_voucher" model="ir.actions.act_window">
         <field name="name">Vouchers</field>
         <field name="res_model">event.voucher</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">form,tree</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create your first voucher
