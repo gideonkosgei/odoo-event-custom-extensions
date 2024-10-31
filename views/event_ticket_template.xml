@@ -1,11 +1,11 @@
 <odoo>
     <template id="event_report_template_foldable_badge_custom" inherit_id="event.event_report_template_foldable_badge">
         <xpath expr="//div[@class='o_event_foldable_badge_barcode_container_top']/img" position="replace">
-            <img t-attf-src="/report/barcode/QR/http://dev.db.adgg.ilri.org:8069/web/barcode_search/barcode/{{attendee.barcode if attendee else '12345678901234567890'}}?&amp;width=174&amp;height=174&amp;quiet=0"
+            <img t-attf-src="/report/barcode/QR/https://staff-party.ilri.org//web/barcode_search/barcode/{{attendee.barcode if attendee else '12345678901234567890'}}?&amp;width=174&amp;height=174&amp;quiet=0"
                  alt="QR Code"/>
         </xpath>
         <xpath expr="//div[@class='o_event_foldable_badge_barcode_container_bottom']/img" position="replace">
-            <img t-attf-src="/report/barcode/QR/http://dev.db.adgg.ilri.org:8069/web/barcode_search/barcode/{{attendee.barcode if attendee else '12345678901234567890'}}?&amp;width=174&amp;height=174&amp;quiet=0"
+            <img t-attf-src="/report/barcode/QR/https://staff-party.ilri.org//web/barcode_search/barcode/{{attendee.barcode if attendee else '12345678901234567890'}}?&amp;width=174&amp;height=174&amp;quiet=0"
                  alt="QR Code"/>
         </xpath>
     </template>
@@ -13,7 +13,7 @@
     <template id="event_report_template_full_page_ticket_custom"
               inherit_id="event.event_report_template_full_page_ticket">
         <xpath expr="//div[@class='pb-3']/img" position="replace">
-            <img t-attf-src="/report/barcode/QR/http://dev.db.adgg.ilri.org:8069/web/barcode_search/barcode/{{attendee.barcode if attendee and attendee.barcode else '12345678901234567890'}}?&amp;width=116&amp;height=116&amp;quiet=0"
+            <img t-attf-src="/report/barcode/QR/https://staff-party.ilri.org//web/barcode_search/barcode/{{attendee.barcode if attendee and attendee.barcode else '12345678901234567890'}}?&amp;width=116&amp;height=116&amp;quiet=0"
                  alt="QR Code"/>
         </xpath>
     </template>
