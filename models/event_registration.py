@@ -9,8 +9,8 @@ class EventRegistration(models.Model):
     def create(self, vals):
         # Email domain check
         user_email = vals.get('email')
-        if not user_email or not user_email.endswith('@cgiar.org'):
-            raise ValidationError("Registration is only permitted using a CGIAR email account.")
+        # if not user_email or not user_email.endswith('@cgiar.org'):
+        #     raise ValidationError("Registration is only permitted using a CGIAR email account.")
 
         # Existing registration check
         event_id = vals.get('event_id')
